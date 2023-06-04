@@ -360,8 +360,10 @@ template <typename T, typename Pointer, std::size_t N>
 class small_unordered_flat_map_data
 {
 private:
+    // Ensure we don't use an alignment less than the system pointer size
+    static constexpr size_t kAlignment = alignof(T) < alignof(void *) ? alignof(void *) : alignof(T);
 
-    alignas(T) unsigned char internal_storage_[N * sizeof(T)];
+    alignas(kAlignment) unsigned char internal_storage_[N * sizeof(T)];
 
 public:
 
