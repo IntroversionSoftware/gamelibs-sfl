@@ -133,7 +133,7 @@ public:
 
     private:
 
-        rb_tree_node_base* node_;
+        rb_tree_node_base* node_{nullptr};
 
     private:
 
@@ -144,7 +144,7 @@ public:
     public:
 
         // Default constructor
-        iterator() noexcept
+        constexpr iterator() noexcept
             : node_()
         {}
 
@@ -243,7 +243,7 @@ public:
     public:
 
         // Default constructor
-        const_iterator() noexcept
+        constexpr const_iterator() noexcept
             : node_()
         {}
 
@@ -372,7 +372,7 @@ private:
             return header_.parent_;
         }
 
-        void reset() noexcept
+        constexpr void reset() noexcept
         {
             header_.color_  = rb_tree_node_color::red;
             header_.parent_ = &header_; // minimum
@@ -381,7 +381,7 @@ private:
             size_ = 0;
         }
 
-        data_base() noexcept
+        constexpr data_base() noexcept
         {
             reset();
         }
@@ -402,7 +402,7 @@ private:
     {
     public:
 
-        data() noexcept
+        constexpr data() noexcept
         (
             std::is_nothrow_default_constructible<node_allocator_type>::value &&
             std::is_nothrow_default_constructible<key_compare>::value
@@ -469,7 +469,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    rb_tree() noexcept
+    constexpr rb_tree() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<KeyCompare>::value

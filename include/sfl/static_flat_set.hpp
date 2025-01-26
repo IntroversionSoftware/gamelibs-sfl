@@ -91,7 +91,7 @@ private:
 
         pointer last_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : last_(first_)
         {}
 
@@ -108,7 +108,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<value_compare>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<value_compare>::value)
             : value_compare()
         {}
 
@@ -139,7 +139,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_flat_set() noexcept(std::is_nothrow_default_constructible<Compare>::value)
+    constexpr static_flat_set() noexcept(std::is_nothrow_default_constructible<Compare>::value)
         : data_()
     {}
 

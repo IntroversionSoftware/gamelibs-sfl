@@ -115,7 +115,7 @@ private:
     {
     public:
 
-        ultra_compare() noexcept(std::is_nothrow_default_constructible<key_compare>::value)
+        constexpr ultra_compare() noexcept(std::is_nothrow_default_constructible<key_compare>::value)
         {}
 
         ultra_compare(const key_compare& c) noexcept(std::is_nothrow_copy_constructible<key_compare>::value)
@@ -189,7 +189,7 @@ private:
         pointer last_;
         pointer eos_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : first_(nullptr)
             , last_(nullptr)
             , eos_(nullptr)
@@ -205,7 +205,7 @@ private:
     {
     public:
 
-        data() noexcept
+        constexpr data() noexcept
         (
             std::is_nothrow_default_constructible<allocator_type>::value &&
             std::is_nothrow_default_constructible<ultra_compare>::value

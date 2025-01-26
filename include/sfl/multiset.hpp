@@ -91,7 +91,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    multiset() noexcept
+    constexpr multiset() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<Compare>::value

@@ -108,7 +108,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
             : allocator_type()
         {}
 
@@ -139,7 +139,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    segmented_devector()
+    constexpr segmented_devector()
         : data_()
     {
         initialize_empty();

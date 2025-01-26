@@ -80,7 +80,7 @@ private:
 
 public:
 
-    static_pool() noexcept
+    constexpr static_pool() noexcept
     {}
 
     static_pool(const static_pool& other) = delete;

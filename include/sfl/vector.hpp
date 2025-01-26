@@ -77,7 +77,7 @@ private:
         pointer last_;  // One-past-last element in vector
         pointer eos_;   // End of storage
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : first_(nullptr)
             , last_(nullptr)
             , eos_(nullptr)
@@ -88,7 +88,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
             : allocator_type()
         {}
 
@@ -119,7 +119,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    vector() noexcept(std::is_nothrow_default_constructible<Allocator>::value)
+    constexpr vector() noexcept(std::is_nothrow_default_constructible<Allocator>::value)
         : data_()
     {}
 

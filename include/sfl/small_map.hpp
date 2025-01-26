@@ -121,7 +121,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    small_map() noexcept
+    constexpr small_map() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<Compare>::value

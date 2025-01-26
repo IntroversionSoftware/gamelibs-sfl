@@ -120,7 +120,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    small_multimap() noexcept
+    constexpr small_multimap() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<Compare>::value

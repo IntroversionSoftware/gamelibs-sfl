@@ -90,7 +90,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_set() noexcept
+    constexpr static_set() noexcept
     (
         std::is_nothrow_default_constructible<Compare>::value
     )

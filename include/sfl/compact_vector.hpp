@@ -76,7 +76,7 @@ private:
         pointer first_;
         pointer last_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : first_(nullptr)
             , last_(nullptr)
         {}
@@ -86,7 +86,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
             : allocator_type()
         {}
 
@@ -117,7 +117,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    compact_vector() noexcept
+    constexpr compact_vector() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value
     )

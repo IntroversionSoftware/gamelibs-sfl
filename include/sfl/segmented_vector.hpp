@@ -106,7 +106,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<allocator_type>::value)
             : allocator_type()
         {}
 
@@ -137,7 +137,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    segmented_vector()
+    constexpr segmented_vector()
         : data_()
     {
         initialize_empty();
@@ -1008,7 +1008,7 @@ private:
     // It does not construct any element.
     // It only allocates memory.
     //
-    void allocate_storage(size_type num_elements)
+    constexpr void allocate_storage(size_type num_elements)
     {
         if (num_elements > max_size())
         {
@@ -1209,7 +1209,7 @@ private:
         }
     }
 
-    void initialize_empty()
+    constexpr void initialize_empty()
     {
         allocate_storage(0);
     }

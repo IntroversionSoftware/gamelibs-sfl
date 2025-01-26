@@ -104,7 +104,7 @@ private:
     {
     public:
 
-        ultra_equal() noexcept(std::is_nothrow_default_constructible<key_equal>::value)
+        constexpr ultra_equal() noexcept(std::is_nothrow_default_constructible<key_equal>::value)
         {}
 
         ultra_equal(const key_equal& e) noexcept(std::is_nothrow_copy_constructible<key_equal>::value)
@@ -144,7 +144,7 @@ private:
 
         pointer last_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : last_(first_)
         {}
 
@@ -161,7 +161,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<ultra_equal>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<ultra_equal>::value)
             : ultra_equal()
         {}
 
@@ -192,7 +192,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_unordered_flat_multimap() noexcept(std::is_nothrow_default_constructible<KeyEqual>::value)
+    constexpr static_unordered_flat_multimap() noexcept(std::is_nothrow_default_constructible<KeyEqual>::value)
         : data_()
     {}
 

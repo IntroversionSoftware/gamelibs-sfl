@@ -102,7 +102,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    small_set() noexcept
+    constexpr small_set() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<Compare>::value

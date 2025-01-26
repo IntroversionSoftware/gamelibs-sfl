@@ -69,7 +69,7 @@ private:
 public:
 
     // Default constructor
-    segmented_iterator() noexcept
+    constexpr segmented_iterator() noexcept
         : segment_()
         , local_()
     {}

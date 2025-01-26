@@ -105,7 +105,7 @@ private:
         pointer last_;
         pointer eos_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : first_(std::pointer_traits<pointer>::pointer_to(*internal_storage_))
             , last_(first_)
             , eos_(first_ + N)
@@ -134,7 +134,7 @@ private:
         pointer last_;
         pointer eos_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : first_(nullptr)
             , last_(nullptr)
             , eos_(nullptr)
@@ -150,7 +150,7 @@ private:
     {
     public:
 
-        data() noexcept
+        constexpr data() noexcept
         (
             std::is_nothrow_default_constructible<allocator_type>::value &&
             std::is_nothrow_default_constructible<key_equal>::value
@@ -233,7 +233,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    small_unordered_flat_set() noexcept
+    constexpr small_unordered_flat_set() noexcept
     (
         std::is_nothrow_default_constructible<Allocator>::value &&
         std::is_nothrow_default_constructible<KeyEqual>::value

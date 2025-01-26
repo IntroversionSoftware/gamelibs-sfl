@@ -109,7 +109,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_map() noexcept
+    constexpr static_map() noexcept
     (
         std::is_nothrow_default_constructible<Compare>::value
     )

@@ -76,7 +76,7 @@ private:
 
         pointer last_;
 
-        data() noexcept
+        constexpr data() noexcept
             : last_(first_)
         {}
 
@@ -92,7 +92,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_vector() noexcept
+    constexpr static_vector() noexcept
     {}
 
     static_vector(size_type n)

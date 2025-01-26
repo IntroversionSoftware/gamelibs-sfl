@@ -105,7 +105,7 @@ private:
 
 public:
 
-    node_small_allocator() noexcept
+    constexpr node_small_allocator() noexcept
     (
         std::is_nothrow_default_constructible<base_allocator_type>::value &&
         std::is_nothrow_default_constructible<static_pool_type>::value

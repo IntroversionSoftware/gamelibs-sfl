@@ -70,7 +70,7 @@ private:
 
 public:
 
-    node_static_allocator() noexcept(std::is_nothrow_default_constructible<static_pool_type>::value)
+    constexpr node_static_allocator() noexcept(std::is_nothrow_default_constructible<static_pool_type>::value)
     {}
 
     node_static_allocator(const node_static_allocator& /*other*/) noexcept

@@ -106,7 +106,7 @@ private:
     {
     public:
 
-        ultra_compare() noexcept(std::is_nothrow_default_constructible<key_compare>::value)
+        constexpr ultra_compare() noexcept(std::is_nothrow_default_constructible<key_compare>::value)
         {}
 
         ultra_compare(const key_compare& c) noexcept(std::is_nothrow_copy_constructible<key_compare>::value)
@@ -146,7 +146,7 @@ private:
 
         pointer last_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : last_(first_)
         {}
 
@@ -163,7 +163,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<ultra_compare>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<ultra_compare>::value)
             : ultra_compare()
         {}
 
@@ -194,7 +194,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_flat_map() noexcept(std::is_nothrow_default_constructible<Compare>::value)
+    constexpr static_flat_map() noexcept(std::is_nothrow_default_constructible<Compare>::value)
         : data_()
     {}
 

@@ -66,7 +66,7 @@ private:
 public:
 
     // Default constructor
-    normal_iterator() noexcept
+    constexpr normal_iterator() noexcept
         : it_()
     {}
 

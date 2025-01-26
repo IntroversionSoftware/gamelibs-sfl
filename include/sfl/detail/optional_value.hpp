@@ -40,7 +40,7 @@ private:
 
 public:
 
-    optional_value() noexcept
+    constexpr optional_value() noexcept
     {}
 
     optional_value(const optional_value& other) = delete;

@@ -108,7 +108,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_multimap() noexcept
+    constexpr static_multimap() noexcept
     (
         std::is_nothrow_default_constructible<Compare>::value
     )

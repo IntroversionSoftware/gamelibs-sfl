@@ -89,7 +89,7 @@ private:
 
         pointer last_;
 
-        data_base() noexcept
+        constexpr data_base() noexcept
             : last_(first_)
         {}
 
@@ -106,7 +106,7 @@ private:
     {
     public:
 
-        data() noexcept(std::is_nothrow_default_constructible<key_equal>::value)
+        constexpr data() noexcept(std::is_nothrow_default_constructible<key_equal>::value)
             : key_equal()
         {}
 
@@ -137,7 +137,7 @@ public:
     // ---- CONSTRUCTION AND DESTRUCTION --------------------------------------
     //
 
-    static_unordered_flat_multiset() noexcept(std::is_nothrow_default_constructible<KeyEqual>::value)
+    constexpr static_unordered_flat_multiset() noexcept(std::is_nothrow_default_constructible<KeyEqual>::value)
         : data_()
     {}
 
