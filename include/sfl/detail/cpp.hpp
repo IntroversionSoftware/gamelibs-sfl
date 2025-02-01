@@ -23,7 +23,11 @@
 
 #include <cassert>
 
-#define SFL_ASSERT(x) assert(x)
+#ifdef _DEBUG
+	#define SFL_ASSERT(x) assert(x)
+#else
+	#define SFL_ASSERT(x)
+#endif
 
 #define SFL_CPP_14 201402L
 #define SFL_CPP_17 201703L
